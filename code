@@ -1,0 +1,89 @@
+19:02:13.981Z	[SERVER]	Installing dependencies...
+19:02:14.771Z	[SERVER]	Installing dependencies with pnpm@10.34.3...
+19:02:15.530Z	[SERVER]	Lockfile is up to date, resolution step is skipped
+19:02:15.574Z	[SERVER]	Progress: resolved 1, reused 0, downloaded 0, added 0
+19:02:15.628Z	[SERVER]	Packages: +453
+++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
+19:02:16.619Z	[SERVER]	Progress: resolved 453, reused 16, downloaded 0, added 0
+19:02:17.620Z	[SERVER]	Progress: resolved 453, reused 394, downloaded 0, added 0
+19:02:18.636Z	[SERVER]	Progress: resolved 453, reused 394, downloaded 26, added 8
+19:02:19.637Z	[SERVER]	Progress: resolved 453, reused 394, downloaded 44, added 15
+19:02:20.637Z	[SERVER]	Progress: resolved 453, reused 394, downloaded 59, added 24
+19:02:21.638Z	[SERVER]	Progress: resolved 453, reused 394, downloaded 59, added 272
+19:02:22.638Z	[SERVER]	Progress: resolved 453, reused 394, downloaded 59, added 431
+19:02:23.263Z	[SERVER]	Progress: resolved 453, reused 394, downloaded 59, added 453, done
+19:02:23.483Z	[SERVER]	dependencies:
++ @base-ui/react 1.5.0
++ @react-three/drei 10.7.7
++ @react-three/fiber 9.6.1
++ @vercel/analytics 1.6.1
++ ai 7.0.14
++ class-variance-authority 0.7.1
++ clsx 2.1.1
++ lucide-react 1.17.0
++ next 16.2.6
++ react 19.2.4
++ react-dom 19.2.4
++ shadcn 4.10.0
++ tailwind-merge 3.4.0
++ three 0.185.1
++ tw-animate-css 1.4.0
++ zod 4.4.3
+
+devDependencies:
++ @tailwindcss/postcss 4.2.0
++ @types/node 24.10.4
++ @types/react 19.2.14
++ @types/react-dom 19.2.3
++ @types/three 0.185.0
++ postcss 8.5.6
++ tailwindcss 4.2.0
++ typescript 5.7.3
+19:02:23.506Z	[SERVER]	╭ Warning ─────────────────────────────────────────────────────────────────────╮
+│                                                                              │
+│   Ignored build scripts: msw@2.14.6, sharp@0.34.5.                           │
+│   Run "pnpm approve-builds" to pick which dependencies should be allowed     │
+│   to run scripts.                                                            │
+│                                                                              │
+╰──────────────────────────────────────────────────────────────────────────────╯
+19:02:23.517Z	[SERVER]	Done in 8.6s using pnpm v10.34.3
+19:02:25.121Z	[SERVER]	> my-project@0.1.0 dev /vercel/share/v0-project
+> next dev
+19:02:26.025Z	[SERVER]	▲ Next.js 16.2.6 (Turbopack)
+- Local:         http://localhost:3000
+- Network:       http://100.64.52.225:3000
+- Environments: .env.development.local
+✓ Ready in 632ms
+19:02:26.154Z	[SERVER]	Attention: Next.js now collects completely anonymous telemetry regarding usage.
+19:02:26.154Z	[SERVER]	This information is used to shape Next.js' roadmap and prioritize features.
+You can learn more, including how to opt-out if you'd not like to participate in this anonymous program, by visiting the following URL:
+19:02:26.155Z	[SERVER]	https://nextjs.org/telemetry
+19:02:26.907Z	[SERVER]	- Experiments (use with caution):
+19:02:26.908Z	[SERVER]	· serverActions
+  ✓ transitionIndicator
+  ⨯ turbopackFileSystemCacheForDev
+19:02:30.762Z	[SERVER]	○ Compiling / ...
+19:02:32.914Z	[SERVER]	GET / 200 in 5.2s (next.js: 4.9s, application-code: 301ms)
+19:19:59.984Z	Uncaught ReferenceError: Environment is not defined
+    at Scene3D (components/scene-3d.tsx:100:8)
+    at BlueprintStudio (components/blueprint-studio.tsx:222:13)
+    at Page (app/page.tsx:6:7)
+   98 |       <ambientLight intensity={0.6} />
+   99 |       <directionalLight position={[6, 10, 6]} intensity={1.2} castShadow shadow-mapSize={...
+> 100 |       <Environment preset="city" />
+      |        ^
+  101 |
+  102 |       {/* Ground grid */}
+  103 |       <Grid
+19:20:16.857Z	[SERVER]	GET / 200 in 78ms (next.js: 8ms, application-code: 70ms)
+19:20:19.878Z	Uncaught ReferenceError: Environment is not defined
+    at Scene3D (components/scene-3d.tsx:100:8)
+    at BlueprintStudio (components/blueprint-studio.tsx:222:13)
+    at Page (app/page.tsx:6:7)
+   98 |       <ambientLight intensity={0.6} />
+   99 |       <directionalLight position={[6, 10, 6]} intensity={1.2} castShadow shadow-mapSize={...
+> 100 |       <Environment preset="city" />
+      |        ^
+  101 |
+  102 |       {/* Ground grid */}
+  103 |       <Grid
