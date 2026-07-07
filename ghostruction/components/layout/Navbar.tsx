@@ -1,25 +1,26 @@
 "use client";
 
-import { Bell, Search } from "lucide-react";
+import Link from "next/link";
+import { UserButton, useUser } from "@clerk/nextjs";
+import { Bell, Search, Upload } from "lucide-react";
 
 export default function Navbar() {
+  const { user } = useUser();
+
   return (
-    <header className="h-20 border-b border-slate-800 bg-[#0F1115] px-8 flex items-center justify-between">
-      {/* Left */}
+    <header className="flex h-20 items-center justify-between border-b border-slate-800 bg-[#0F1115] px-8">
       <div>
         <h1 className="text-3xl font-bold tracking-tight text-white">
           Dashboard
         </h1>
 
         <p className="mt-1 text-sm text-slate-400">
-          Welcome back, Moataz.
+          Welcome back{user?.firstName ? `, ${user.firstName}` : ""}.
         </p>
       </div>
 
-      {/* Right */}
       <div className="flex items-center gap-5">
-        {/* Search */}
-        <div className="relative">
+        <div className="relative hidden lg:block">
           <Search
             size={18}
             className="absolute left-4 top-1/2 -translate-y-1/2 text-slate-500"
@@ -32,34 +33,28 @@ export default function Navbar() {
           />
         </div>
 
-        {/* New Project */}
-        <button className="rounded-2xl bg-blue-600 px-5 py-3 text-sm font-semibold text-white transition hover:bg-blue-700">
-          + New Project
-        </button>
+        <Link
+          href="/upload"
+          className="inline-flex items-center gap-2 rounded-2xl bg-blue-600 px-5 py-3 text-sm font-semibold text-white transition hover:bg-blue-700"
+        >
+          <Upload size={16} />
+          Upload
+        </Link>
 
-        {/* Notifications */}
         <button className="relative flex h-12 w-12 items-center justify-center rounded-2xl border border-slate-700 bg-[#151922] transition hover:border-blue-500 hover:bg-blue-500/10">
           <Bell size={20} className="text-white" />
-
-          <span className="absolute right-3 top-3 h-2.5 w-2.5 rounded-full bg-blue-500"></span>
+          <span className="absolute right-3 top-3 h-2.5 w-2.5 rounded-full bg-blue-500" />
         </button>
 
-        {/* Profile */}
-        <button className="flex items-center gap-3 rounded-2xl border border-slate-700 bg-[#151922] px-3 py-2 transition hover:border-blue-500">
-          <div className="flex h-11 w-11 items-center justify-center rounded-xl bg-blue-600 font-bold text-white shadow-lg shadow-blue-600/30">
-            M
-          </div>
-
-          <div className="text-left">
+        <div className="flex items-center gap-3 rounded-2xl border border-slate-700 bg-[#151922] px-3 py-2 transition hover:border-blue-500">
+          <UserButton />
+          <div className="hidden text-left sm:block">
             <p className="font-semibold text-white">
-              Moataz
+              {user?.fullName ?? "Account"}
             </p>
-
-            <p className="text-xs text-slate-400">
-              Founder
-            </p>
+            <p className="text-xs text-slate-400">Owner</p>
           </div>
-        </button>
+        </div>
       </div>
     </header>
   );
